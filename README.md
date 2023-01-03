@@ -1,1 +1,1 @@
-"# delete-es-index" 
+# delete-es-index
