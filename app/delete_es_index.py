@@ -5,4 +5,7 @@ es = Elasticsearch(
     basic_auth=('elastic', 'e0_kX+xT1Oh_v+8pLot3')
 )
 
-es.options(ignore_status=[400, 404]).indices.delete(index='house_prices')
+if es.indices.exists(index="house_prices"):
+    es.options(ignore_status=[400, 404]).indices.delete(index='house_prices')
+else:
+    print("The index house_prices does not exists")
